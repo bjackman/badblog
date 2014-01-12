@@ -21,6 +21,18 @@
   clear: both;
 }
 
+#posts {
+  width: 100%;
+}
+#posts td {
+  border: none;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+}
+#posts td:nth-child(2) {
+  text-align: right;
+}
+
 body {
   /* If you have Adelle you should be allowed to enjoy it */
   font: 18px 'Rokkitt', Georgia, serif;
@@ -36,10 +48,13 @@ a {
 
 h1 {
   color: black;
+}
+header h1 {
   border-bottom: 2px solid black;
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
+
 a:hover {
   text-decoration: underline;
 }

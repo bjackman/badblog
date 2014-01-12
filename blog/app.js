@@ -31,6 +31,7 @@ app.get('/', function(req, res){res.redirect('/post/recent')});
 app.get('/posts', posts)
 app.get('/post/:name', post)
 
+console.log("hello world");
 config = {}
 postInfos = []
 var i = 1
