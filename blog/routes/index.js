@@ -1,6 +1,5 @@
 var fs = require('fs'),
     path = require('path'),
-    marked = require('marked'),
     _ = require('lodash')
 
 module.exports = function(req, res){
@@ -15,7 +14,6 @@ module.exports = function(req, res){
       })
     }
     else{
-      
     }
   })
 };

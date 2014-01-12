@@ -1,21 +1,28 @@
 var fs = require('fs'),
     path = require('path'),
-    marked = require('marked'),
-    _ = require('lodash')
+    _ = require('lodash'),
+    strftime = require('strftime')
 
 module.exports = function(req, res){
-  if(req.params.name === 'recent'){
-    var recentName = postInfos[postInfos.length - 1].id
-    fs.readFile(__dirname+'/../../posts/'+recentName, 'utf8', function(err, content){
-      var htmlContent = marked(content)
-      res.render('index', {config: config, content: htmlContent});
-    })
-  }
-  else {
-    var post = _.find(postInfos, {url: req.params.name})
-    fs.readFile(__dirname+'/../../posts/'+post.id, 'utf8', function(err, content){
-      var htmlContent = marked(content)
-      res.render('index', {config: config, content: htmlContent});
-    })
-  }
+  // get first 5 posts
+  fs.readdir(__dirname+'/../../posts/', function(err, files){
+    var postInfo;
+    if(req.params.name === 'recent'){
+      postInfo = postInfos[files.length - 1];
+    }
+    else {
+      try {
+        postInfo = _.find(postInfos, {url: req.params.name})
+      } catch (err) {
+        res.status(404).send("nope");
+        return;
+      }
+    }
+    postInfo.meta.date = strftime("%B %d, %Y", new Date(postInfo.meta.date))
+    res.render('index', {
+      config: config,
+      meta: postInfo.meta,
+      content: postInfo.html
+    });
+  })
 };

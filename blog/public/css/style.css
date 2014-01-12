@@ -1,41 +1,110 @@
+@charset "UTF-8";
+
+.block {
+  text-decoration:none;
+  font-weight: bold;
+  background-color:black;
+  color: white;
+  padding: 6px;
+  margin: 6px;
+  float: right;
+}
+.date {
+  color: gray;
+  font-size: small;
+  text-align: right;
+}
+.title {
+  float: left;
+}
+.clear {
+  clear: both;
+}
+
 body {
-  padding-left: 25%;
-  padding-right: 25%;
-  padding-top:25px;
-  font: 18px "Sans-Serif", Helvetica, Arial, sans-serif;
+  /* If you have Adelle you should be allowed to enjoy it */
+  font: 18px 'Rokkitt', Georgia, serif;
+  color: #444;
+  line-height: 1.4em;
+  background-color: #eee;
+}
+
+a {
+  color: #4040c4;
+  text-decoration: none;
+}
+
+h1 {
+  color: black;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+pre {
+  font-size: 14px;
+  overflow: auto;
 }
 
 code {
-  font: 16px "Sans-Serif", Helvetica, Arial, sans-serif;
+  white-space: pre;
 }
 
-@media screen and (max-width: 1000px){
-  body{
-    padding-left: 15%;
-    padding-right: 15%;
-  }
+pre, code {
+  background-color: #ddd;
+  font-family: Consolas, "Courier New", Monaco, monospace;
 }
 
-@media screen and (max-width: 765px){
-  body{
-    padding-left: 5%;
-    padding-right: 5%;
-  }
+blockquote {
+  font-style: italic;
 }
 
-#home {
-  color: black; 
-  text-decoration:none;
-  background-color:black;
-  padding: 5px;
-  color: white;
+table {
+  width: 70%;
+  border-collapse: collapse;
 }
 
+th, td {
+  border: 1px solid #999;
+  color: #333;
+}
+
+.date {
+  color: #505050;
+  font-size: 14px;
+}
+
+.title a {
+  color: #000;
+}
+
+div#content img {
+  max-width: 100%;
+}
+#main {
+  padding: 0;
+  width: 700px;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+header {
+}
 footer {
-  padding-top: 20px;
+  text-align: center;
+  color: #505050;
+  font-style: italic;
+  font-size: 8pt;
 }
 
-img {
-  width: 40%;
+html, body{
+  margin: 0;
+  padding: 0;
 }
-

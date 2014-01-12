@@ -3,6 +3,8 @@ extends layout
 block content
   hr
   h2 Posts
+  ul#posts
   each post in posts
-    div#posts
-      a(href='/post/#{post.url}') #{post.title}
+    li
+      a(href='/post/#{post.url}') #{post.meta.title}   
+      span #{post.meta.dateString}

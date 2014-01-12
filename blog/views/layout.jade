@@ -1,22 +1,21 @@
-doctype 5
+doctype html
 html
   head
+    meta(charset="utf=8")
+    meta(name=viewport content="width=device-width")
     title=config.name
+    // link(rel='alternate', href='/index.atom')
     link(rel='stylesheet', href='/css/style.css')
-    link(rel="stylesheet", href="http://yandex.st/highlightjs/7.5/styles/default.min.css")
-    script(src="http://yandex.st/highlightjs/7.5/highlight.min.js")
-    script
-      hljs.initHighlightingOnLoad();
+    link(href='http://fonts.googleapis.com/css?family=Rokkitt:400,700', rel='stylesheet' type='text/css')
+    // link(rel="stylesheet", href="http://yandex.st/highlightjs/7.5/styles/default.min.css")
+    // script(src="http://yandex.st/highlightjs/7.5/highlight.min.js")
 
   body
-    span
-      h2
-        a#home(href='/') #{config.name}
-      each link in config.links
-        a(href='#{link.href}') #{link.a}
-        span(style='padding:5px')
-      a(href='/posts') other posts
-    block content
-  footer
-    p
-      hr
+    div#main
+      header
+        a.title.block(href='/') #{config.name}
+        each link in config.links
+          a.block(href='#{link.href}') #{link.a}
+      .clear
+      article
+        block content

@@ -2,3 +2,6 @@ extends layout
 
 block content
   div!=content
+  if meta.date
+    div.date
+      != meta.date
